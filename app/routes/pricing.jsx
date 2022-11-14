@@ -1,4 +1,5 @@
 import { FaTrophy, FaHandshake } from 'react-icons/fa';
+import marketingStyles from '~/styles/marketing.css';
 
 import PricingPlan from '~/components/marketing/PricingPlan';
 
@@ -8,14 +9,14 @@ const PRICING_PLANS = [
     title: 'Basic',
     price: 'Free forever',
     perks: ['1 User', 'Up to 100 expenses/year', 'Basic analytics'],
-    icon: FaHandshake
+    icon: FaHandshake,
   },
   {
     id: 'p2',
     title: 'Pro',
     price: '$9.99/month',
     perks: ['Unlimited Users', 'Unlimited expenses/year', 'Detailed analytics'],
-    icon: FaTrophy
+    icon: FaTrophy,
   },
 ];
 
@@ -40,3 +41,7 @@ export default function PricingPage() {
 }
 
 export function meta() {}
+
+export function links() {
+  return [{ rel: 'stylesheet', href: marketingStyles }];
+}
