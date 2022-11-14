@@ -1,3 +1,5 @@
+import { Link, NavLink } from '@remix-run/react';
+
 import Logo from '../util/Logo';
 
 function MainHeader() {
@@ -7,22 +9,22 @@ function MainHeader() {
       <nav id="main-nav">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="/pricing">Pricing</a>
+            <NavLink to="/pricing">Pricing</NavLink>
           </li>
           <li>
-            <a href="/expenses">Expenses</a>
+            <NavLink to="/expenses">Expenses</NavLink>
           </li>
         </ul>
       </nav>
       <nav id="cta-nav">
         <ul>
           <li>
-            <a href="/auth" className="cta">
+            <Link to="/auth" className="cta">
               Login
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
