@@ -20,6 +20,14 @@ function ExpenseForm() {
   const expenseData = expenses.find((expense) => expense.id === params.id);
   const navigation = useNavigation();
 
+  // can't use remix json method since it's backend only
+  // will have to throw new Response() instead
+  if (params.id && !expenseData) {
+    // throw new Response('Expense not found', { status: 404 });
+    // However, since throwing a new response gets picked up by error boundary and lacks detail:
+    return <p>Invalid expense id.</p>;
+  }
+
   const defaultValues = expenseData
     ? {
         title: expenseData.title,
