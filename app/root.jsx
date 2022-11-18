@@ -44,7 +44,6 @@ export default function App() {
   );
 }
 
-// To try this, enter an invalid URL in the browser
 export function CatchBoundary() {
   const caughtResponse = useCatch();
 
