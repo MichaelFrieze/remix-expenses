@@ -23,6 +23,11 @@ export default function AddExpensesPage() {
   );
 }
 
+// export function loader() {
+//   console.log('ADD LOADER');
+//   return null;
+// }
+
 export async function action({ request }) {
   const formData = await request.formData();
   const expenseData = Object.fromEntries(formData);
