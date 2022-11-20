@@ -59,4 +59,4 @@ export function headers({ actionHeaders, loaderHeaders, parentHeaders }) {
   };
 }
 
-export const handle = { disableJS: true };
+export const handle = { disableJS: false };
