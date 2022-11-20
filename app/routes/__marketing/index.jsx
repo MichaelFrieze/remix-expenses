@@ -19,7 +19,7 @@ export default function Index() {
           <div className="marketing-explanation">
             <p>Manage your expenses in one central place.</p>
             <p>
-              <Link className="cta" to="/expenses">
+              <Link prefetch="intent" className="cta" to="/expenses">
                 <span>Get Started</span>
                 <FaArrowRight />
               </Link>

@@ -11,10 +11,14 @@ function MainHeader() {
       <nav id="main-nav">
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink prefetch="intent" to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink prefetch="intent" to="/pricing">
+              Pricing
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -27,7 +31,7 @@ function MainHeader() {
               </Form>
             )}
             {!userId && (
-              <Link to="/auth" className="cta">
+              <Link prefetch="intent" to="/auth" className="cta">
                 Login
               </Link>
             )}
