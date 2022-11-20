@@ -17,7 +17,7 @@ export default function ExpensesLayout() {
       <Outlet />
       <main>
         <section id="expenses-actions">
-          <Link to="add">
+          <Link prefetch="intent" to="add">
             <FaPlus />
             <span>Add Expense</span>
           </Link>
@@ -31,7 +31,11 @@ export default function ExpensesLayout() {
           <section id="no-expenses">
             <h1>No expenses found</h1>
             <p>
-              Start <Link to="add">adding some</Link> today.
+              Start{' '}
+              <Link prefetch="intent" to="add">
+                adding some
+              </Link>{' '}
+              today.
             </p>
           </section>
         )}

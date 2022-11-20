@@ -35,7 +35,9 @@ function ExpenseListItem({ id, title, amount }) {
         {/* <Form method='delete' action={`/expenses/${id}`}>
           <button>Delete</button>
         </Form> */}
-        <Link to={id}>Edit</Link>
+        <Link prefetch="intent" to={id}>
+          Edit
+        </Link>
       </menu>
     </article>
   );
