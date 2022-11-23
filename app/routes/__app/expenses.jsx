@@ -51,7 +51,7 @@ export async function loader({ request }) {
   // return expenses; // return json(expenses);
   return json(expenses, {
     headers: {
-      'Cache-Control': 'max-age=3',
+      'Cache-Control': 'max-age=1, s-maxage=60, stale-while-revalidate=300',
     },
   });
 
