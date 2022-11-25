@@ -23,6 +23,7 @@ export function links() {
 
 export function headers() {
   return {
-    'Cache-Control': 'max-age=1, s-maxage=60, stale-while-revalidate=300',
+    'Cache-Control':
+      'max-age=10, s-maxage=86400, stale-while-revalidate=604800',
   };
 }

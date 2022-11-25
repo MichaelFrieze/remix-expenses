@@ -39,8 +39,8 @@ export function links() {
   return [{ rel: 'stylesheet', href: authStyles }];
 }
 
-export function headers({ actionHeaders, loaderHeaders, parentHeaders }) {
+export function headers() {
   return {
-    'Cache-Control': parentHeaders.get('Cache-Control'), // 60 minutes
+    'Cache-Control': 'private, max-age=10',
   };
 }

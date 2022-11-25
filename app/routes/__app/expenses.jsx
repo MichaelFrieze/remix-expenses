@@ -46,14 +46,15 @@ export default function ExpensesLayout() {
 
 export async function loader({ request }) {
   const userId = await requireUserSession(request);
-
   const expenses = await getExpenses(userId);
-  // return expenses; // return json(expenses);
-  return json(expenses, {
-    headers: {
-      'Cache-Control': 'max-age=1, s-maxage=60, stale-while-revalidate=300',
-    },
-  });
+
+  return expenses; // return json(expenses);
+
+  // return json(expenses, {
+  //   headers: {
+  //     'Cache-Control': 'max-age=1, s-maxage=60, stale-while-revalidate=300',
+  //   },
+  // });
 
   // if (!expenses || expenses.length === 0) {
   //   throw json(
@@ -67,8 +68,8 @@ export async function loader({ request }) {
 //   return <p>Error</p>
 // }
 
-export function headers({ actionHeaders, loaderHeaders, parentHeaders }) {
-  return {
-    'Cache-Control': loaderHeaders.get('Cache-Control'), // 60 minutes
-  };
-}
+// export function headers({ actionHeaders, loaderHeaders, parentHeaders }) {
+//   return {
+//     'Cache-Control': loaderHeaders.get('Cache-Control'), // 60 minutes
+//   };
+// }
