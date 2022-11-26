@@ -21,10 +21,19 @@ export default function ExpensesLayout() {
             <FaPlus />
             <span>Add Expense</span>
           </Link>
-          <a href="/expenses/raw">
+          <a
+            href={`data:text/json;charset=utf-8,${encodeURIComponent(
+              JSON.stringify(expenses)
+            )}`}
+            download={`expenses.json`}
+          >
             <FaDownload />
-            <span>Load Raw Data</span>
+            <span>Download Expenses</span>
           </a>
+          {/* <a href="/expenses/raw">
+            <FaDownload />
+            <span>Download Expenses</span>
+          </a> */}
         </section>
         {hasExpenses && <ExpensesList expenses={expenses} />}
         {!hasExpenses && (
